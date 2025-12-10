@@ -14,37 +14,37 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private int prID;
+    private Integer id;
     private String name;
     private BigDecimal price;
     private String description;
     private String category;
     private String brand;
-    private int stockQuantity;
-    private boolean isAvailable;
+    private Integer stockQuantity;
+    private Boolean available;
     private Date releaseDate;
 
     public Product() {
     }
 
-    public Product(int prID, String name, BigDecimal price, String description, String category, String brand, int stockQuantity, boolean isAvailable, Date releaseDate) {
-        this.prID = prID;
+    public Product(Integer id, String name, BigDecimal price, String description, String category, String brand, Integer stockQuantity, Boolean available, Date releaseDate) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
         this.brand = brand;
         this.stockQuantity = stockQuantity;
-        this.isAvailable = isAvailable;
+        this.available = available;
         this.releaseDate = releaseDate;
     }
 
-    public int getPrID() {
-        return prID;
+    public int getId() {
+        return id;
     }
 
-    public void setPrID(int prID) {
-        this.prID = prID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -87,20 +87,20 @@ public class Product {
         this.brand = brand;
     }
 
-    public int getStockQuantity() {
+    public Integer getStockQuantity() {
         return stockQuantity;
     }
 
-    public void setStockQuantity(int stockQuantity) {
+    public void setStockQuantity(Integer stockQuantity) {
         this.stockQuantity = stockQuantity;
     }
 
-    public boolean isAvailable() {
-        return isAvailable;
+    public Boolean getAvailable() {
+        return available;
     }
 
-    public void setAvailable(boolean available) {
-        isAvailable = available;
+    public void setAvailable(Boolean available) {
+        this.available = available;
     }
 
     public Date getReleaseDate() {
