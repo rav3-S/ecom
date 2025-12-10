@@ -1,0 +1,12 @@
+PRODUCT
+
+id: PrimaryKey
+name: String
+description: String
+brand: String
+category: String
+price: Decimal
+stockQuantity: Integer
+releaseDate: Date
+available: Boolean
+Image?
