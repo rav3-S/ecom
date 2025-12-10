@@ -28,4 +28,15 @@ public class ProductService {
     public Product addProduct(Product product) {
         return dao.save(product);
     }
+
+    public void updateProduct(int id, Product product) {
+        if(dao.existsById(id)) {
+            product.setId(id);
+            dao.save(product);
+        }
+    }
+
+    public void deleteProduct(int id) {
+        dao.deleteById(id);
+    }
 }

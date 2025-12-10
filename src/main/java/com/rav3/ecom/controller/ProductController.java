@@ -45,4 +45,24 @@ public class ProductController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @PutMapping("/product/{id}")
+    public ResponseEntity<String> updateProduct(@PathVariable int id, @RequestBody Product product) {
+        Product existingProduct = service.getProductById(id);
+        if (existingProduct == null) {
+            return new ResponseEntity<>("Product not found", HttpStatus.NOT_FOUND);
+        }
+        service.updateProduct(id, product);
+        return new ResponseEntity<>("Product updated successfully", HttpStatus.OK);
+    }
+
+    @DeleteMapping("/product/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable int id) {
+        Product existingProduct = service.getProductById(id);
+        if (existingProduct == null) {
+            return new ResponseEntity<>("Product not found", HttpStatus.NOT_FOUND);
+        }
+        service.deleteProduct(id);
+        return new ResponseEntity<>("Product deleted successfully", HttpStatus.OK);
+    }
 }
