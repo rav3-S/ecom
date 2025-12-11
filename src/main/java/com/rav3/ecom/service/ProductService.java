@@ -39,4 +39,8 @@ public class ProductService {
     public void deleteProduct(int id) {
         dao.deleteById(id);
     }
+
+    public List<Product> searchProducts(String keyword) {
+        return dao.searchProducts(keyword);
+    }
 }
